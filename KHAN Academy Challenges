@@ -1,13 +1,9 @@
+-- PLAYLIST CHALLENGE we are selecting all the songs from the databse (songs) provided
 SELECT title FROM songs;
+-- selecting songs where the songs were categorized 'epic' and were relaesed after 1990
 SELECT title FROM songs WHERE mood = "epic" OR released >1990;
+-- in addition tonthe code above we are also adding te condition that it be more than 4 minutes
 SELECT title FROM songs WHERE mood = "epic" AND released >1990 AND duration <240; 
 
 
-CREATE TABLE doggystore (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, price INTEGER, aisle INTEGER);
-INSERT INTO doggystore VALUES (1,"dogcollar",4,6,2);
-INSERT INTO doggystore VALUES (2,"squekytoy",10,5,3);
-INSERT INTO doggystore VALUES (3,"dogbowl",6,7,1);
-INSERT INTO doggystore VALUES (4,"dogbed",5,12,1);
-INSERT INTO doggystore VALUES (5,"ropetoy",10,4,3);
-SELECT SUM (price) FROM doggystore;
-SELECT price FROM doggystore GROUP BY price;
+
