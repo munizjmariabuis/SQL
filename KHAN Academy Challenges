@@ -9,3 +9,10 @@ SELECT title FROM songs WHERE mood = "epic" AND released >1990 AND duration <240
 SELECT author, SUM (words) AS total_words FROM books  GROUP BY author HAVING total_words > 1000000;
 SELECT author, avg(words) AS avg_words FROM books  GROUP BY author HAVING avg_words > 150000;
 
+SELECT name, number_grade,ROUND(fraction_completed*100)AS percent_completed FROM student_grades;
+SELECT COUNT(*), CASE
+WHEN number_grade > 90 THEN "A" 
+WHEN number_grade > 80 THEN "B" 
+WHEN number_grade > 70 THEN "C" 
+ELSE "F" END AS "letter_grade" 
+FROM student_grades GROUP BY "letter_grade";
